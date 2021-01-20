@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Header from "./Header";
+import DrinkSelector from "./DrinkSelector";
+import Cart from './Cart'
+import coffeeData from "./data/coffeeTypes.json";
+import extrasData from "./data/extras.json";
 
 function App() {
+  const [coffeeTypes, setCoffeeTypes] = useState(coffeeData);
+  const [extras, setExtras] = useState(extrasData);
+
+  const [selectedCoffee, setSelectedCoffee] = useState("");
+  const [selectedExtra, setSelectedExtra] = useState("");
+  const [total, setTotal] = useState(0)
+
+  const handleSelectedCoffee = (drink) => setSelectedCoffee(drink);
+  const handleSelectedExtra = (extra) => setSelectedExtra(extra);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Cart drink={selectedCoffee} extra={selectedExtra} total={total}/>
+      <DrinkSelector drinkTypes={coffeeTypes} handle={handleSelectedCoffee} />
+      <DrinkSelector drinkTypes={extras} handle={handleSelectedExtra} />
     </div>
   );
 }

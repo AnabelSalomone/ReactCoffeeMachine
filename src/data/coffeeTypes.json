@@ -1,0 +1,25 @@
+[
+    {
+        "name": "Black coffee",
+        "price": 1.50
+    },
+    {
+        "name": "Capuccino",
+        "price": 3.10
+    },
+    {
+        "name": "Caramel Macchiato",
+        "price": 3.50
+    },
+    {
+        "name": "Filtered coffee",
+        "price": 0.80
+    },
+    {
+        "name": "Greek coffee",
+        "price": 2.20
+    },
+    {
+        "name": ""
+    }
+]

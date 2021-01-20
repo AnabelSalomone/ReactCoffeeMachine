@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Milk",
+        "price": 0.50
+    },
+    {
+        "name": "Cream",
+        "price": 0.75
+    },
+    {
+        "name": "Soy milk",
+        "price": 1.00
+    },
+    {
+        "name": "Caramel syrup",
+        "price": 1.25
+    }
+]
