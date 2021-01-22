@@ -11,7 +11,7 @@ const DrinkSelector = (props) => {
   return (
     <div className="selector">
       <select onChange={handleChange}>
-        <option disabled selected value>
+        <option id="default" disabled selected>
           -- select an option --
         </option>
         {drinkTypes.map((item) => {

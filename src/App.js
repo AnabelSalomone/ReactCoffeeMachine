@@ -29,7 +29,8 @@ function App() {
   };
 
   const getTotalOrder = (currentTotalOrder, newOrder) => {
-    setTotalOrder(currentTotalOrder + newOrder)
+
+    setTotalOrder((parseFloat(currentTotalOrder) + parseFloat(newOrder)).toFixed(2))
   }
 
   useEffect(() => {

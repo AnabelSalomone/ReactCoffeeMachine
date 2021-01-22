@@ -7,7 +7,7 @@ const Header = (props) => {
         <h2>Coffee Machine</h2>
       </div>
       <div>
-        <h2>Total: {props.total.toFixed(2)}</h2>
+        <h2>Total: {props.total}€</h2>
       </div>
     </div>
   );
