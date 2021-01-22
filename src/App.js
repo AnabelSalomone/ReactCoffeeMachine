@@ -28,9 +28,10 @@ function App() {
     );
   };
 
-  const getTotalOrder = (currentTotalOrder, newOrder) => {
-
+  const submitOrder = (currentTotalOrder, newOrder) => {
     setTotalOrder((parseFloat(currentTotalOrder) + parseFloat(newOrder)).toFixed(2))
+    setSelectedCoffee("");
+    setSelectedExtra("");
   }
 
   useEffect(() => {
@@ -40,11 +41,11 @@ function App() {
   return (
     <div className="App">
       <Header total={totalOrder} />
-      <Cart drink={selectedCoffee} extra={selectedExtra} total={currentTotal} />
-      <DrinkSelector drinkTypes={coffeeTypes} handle={setSelectedCoffee} />
-      <DrinkSelector drinkTypes={extras} handle={setSelectedExtra} />
+      <Cart drink={selectedCoffee} extra={selectedExtra} total={currentTotal} wholeTotal={totalOrder}/>
+      <DrinkSelector drinkTypes={coffeeTypes} handle={setSelectedCoffee} selected={selectedCoffee} />
+      <DrinkSelector drinkTypes={extras} handle={setSelectedExtra} selected={selectedExtra} />
       <ConfirmationButton
-        handle={getTotalOrder}
+        handle={submitOrder}
         total={totalOrder}
         newValue={currentTotal}
       />

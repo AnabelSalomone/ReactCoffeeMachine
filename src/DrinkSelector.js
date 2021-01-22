@@ -3,6 +3,7 @@ import React from "react";
 const DrinkSelector = (props) => {
   const drinkTypes = props.drinkTypes;
   const handleItem = props.handle;
+  const selectedItem = props.selected
 
   const handleChange = (e) => {
     handleItem(e.target.value);
@@ -11,7 +12,7 @@ const DrinkSelector = (props) => {
   return (
     <div className="selector">
       <select onChange={handleChange}>
-        <option id="default" disabled selected>
+        <option id="default" disabled selected={selectedItem === ""}>
           -- select an option --
         </option>
         {drinkTypes.map((item) => {
